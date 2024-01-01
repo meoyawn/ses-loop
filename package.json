@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.484.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.6",
+    "prettier": "^3.1.1"
+  },
+  "type": "module"
+}
