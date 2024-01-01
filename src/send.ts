@@ -49,7 +49,12 @@ const mkEmail = ({
     Source: from,
   })
 
-const config = load(await readFile(process.argv[2], "utf-8")) as Cfg
+const configPath = process.argv[2]
+const errMsg = "bun src/send.ts config.yml"
+if (!configPath) throw new Error(errMsg)
+
+const config = load(await readFile(configPath, "utf-8")) as Cfg
+if (!config.region) throw new Error(errMsg)
 
 const sesClient = new SESClient({
   region: config.region,
